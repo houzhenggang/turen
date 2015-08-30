@@ -25,7 +25,7 @@ class CmsClassController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => CmsClass::find(),
+            'query' => CmsClass::find()->alive(),
             'pagination' => [
                 'pageSize' => static::MAX_PAGE_SIZE,
             ],
@@ -38,7 +38,13 @@ class CmsClassController extends Controller
         
         //递归处理
         $dataProvider->models = General::recursiveObj($dataProvider->models, 0, 0, '' ,'<span class="bank"></span>', false);
-
+		$keys = General::getModelsKeys($dataProvider->models, 'id');
+        $dataProvider->setKeys($keys);
+        
+// 		fb($keys);
+// 		fb($dataProvider->getKeys());
+// 		fb($dataProvider->models);
+        
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
@@ -92,32 +98,6 @@ class CmsClassController extends Controller
                 'model' => $model,
             ]);
         }
-    }
-
-    /**
-     * Deletes an existing CmsClass model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
-    
-    /**
-     * 切换栏目状态
-     * @param int $id
-     * @return \yii\web\Response
-     */
-    public function actionSwitchStauts($id)
-    {
-    	$model = $this->findModel($id);
-    	$model->status = $model->status?0:1;//取反
-    	$model->save(false);
-    	return $this->redirect(['index']);
     }
 
     /**
