@@ -159,12 +159,12 @@ $baseUrl = Yii::getAlias('@web');
                     		['label' => '<i class="fa fa-dashboard"></i><span>后台首页</span>', 'url' => ['/user/common/default']],
                     		['label' => '<i class="fa fa-wordpress"></i><span>内容管理</span><i class="fa fa-angle-left pull-right"></i>', 'url' => 'javascript:;',
                     			'items' => [
-                    				['label' => '<i class="fa fa-th-large"></i><span>栏目管理</span>', 'url' => ['/cms/cms-class/index']],
-                    				['label' => '<i class="fa fa-file-text-o"></i><span>单页面信息管理</span>', 'url' => ['/cms/cms-page/index']],
-                    				['label' => '<i class="fa fa-list"></i><span>列表信息管理</span>', 'url' => ['/cms/cms-list/index']],
-                    				['label' => '<i class="fa fa-picture-o"></i><span>图片信息管理</span>', 'url' => ['/cms/cms-img/index']],
-                    				['label' => '<i class="fa fa-arrow-circle-o-down"></i><span>资源下载管理</span>', 'url' => ['/cms/cms-download/index']],
-                    				// ['label' => '<i class="fa fa-cube"></i><span>产品信息管理</span>', 'url' => ['/cms/cms-product/index']],
+                    				['label' => '<i class="fa fa-th-large"></i><span>栏目管理</span>', 'url' => ['/cms/column/index']],
+                    				['label' => '<i class="fa fa-file-text-o"></i><span>单页面信息管理</span>', 'url' => ['/cms/page/index']],
+                    				['label' => '<i class="fa fa-list"></i><span>列表信息管理</span>', 'url' => ['/cms/post/index']],
+                    				['label' => '<i class="fa fa-picture-o"></i><span>图片信息管理</span>', 'url' => ['/cms/img/index']],
+                    				['label' => '<i class="fa fa-arrow-circle-o-down"></i><span>资源下载管理</span>', 'url' => ['/cms/download/index']],
+                    				// ['label' => '<i class="fa fa-cube"></i><span>产品信息管理</span>', 'url' => ['/cms/product/index']],
                     				// ['label' => '<i class="fa fa-leaf"></i><span>数据碎片管理</span>', 'url' => ['/cms//']],
                     			]
                     		], ['label' => '<i class="fa fa-film"></i><span>广告管理</span><i class="fa fa-angle-left pull-right"></i>', 'url' => 'javascript:;',
@@ -176,11 +176,18 @@ $baseUrl = Yii::getAlias('@web');
                     		],
                             ['label' => '<i class="fa fa-cubes "></i><span>产品&分类</span><i class="fa fa-angle-left pull-right"></i>', 'url' => 'javascript:;',
                                 'items' => [
-                                    ['label' => '<i class="fa fa-leaf "></i><span>产品管理</span>', 'url' => ['/catalog/product/index']],
-                                    ['label' => '<i class="fa fa-leaf "></i><span>分类管理</span>', 'url' => ['/catalog/category/index']],
-                                    ['label' => '<i class="fa fa-leaf "></i><span>品牌管理</span>', 'url' => ['/catalog/brand/index']],
+                                    ['label' => '<i class="fa fa-leaf"></i><span>产品管理</span>', 'url' => ['/catalog/product/index']],
+                                    ['label' => '<i class="fa fa-leaf"></i><span>分类管理</span>', 'url' => ['/catalog/category/index']],
+                                    ['label' => '<i class="fa fa-leaf"></i><span>品牌管理</span>', 'url' => ['/catalog/brand/index']],
                                 ]
                             ],
+                    		['label' => '<i class="fa fa-leaf"></i><span>扩展模块</span><i class="fa fa-angle-left pull-right"></i>', 'url' => 'javascript:;',
+                    			'items' => [
+                    				['label' => '<i class="fa fa-leaf"></i><span>评论管理</span>', 'url' => ['/comment/product/index']],
+                    				['label' => '<i class="fa fa-leaf"></i><span>友情链接管理</span>', 'url' => ['/link/product/index']],
+                    				['label' => '<i class="fa fa-leaf"></i><span>客户留言管理</span>', 'url' => ['/message/product/index']],
+                    			]
+                    		],
                             ['label' => '<i class="fa fa-user-plus"></i><span>用户&地址</span><i class="fa fa-angle-left pull-right"></i>', 'url' => 'javascript:;',
                                 'items' => [
                                     ['label' => '<i class="fa fa-user"></i><span>用户列表</span>', 'url' => ['/customer/customer/index']],
